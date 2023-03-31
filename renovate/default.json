@@ -1,0 +1,38 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "prHourlyLimit": 10,
+  "addLabels": [
+    "dependency/renovate"
+  ],
+  "dependencyDashboard": true,
+  "dependencyDashboardLabels": [
+    "dependency/renovate"
+  ],
+  "dependencyDashboardAutoclose": false,
+  "packageRules": [
+    {
+      "description": "All minor",
+      "groupName": "Minor-Updates",
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "digest"
+      ]
+    },
+    {
+      "description": "All Major",
+      "groupName": "Major-Updates",
+      "excludePackageNames": [
+        "postgres",
+        "postgresql",
+        "linuxserver/sqlitebrowser"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ]
+    }
+  ]
+}
