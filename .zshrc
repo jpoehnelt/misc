@@ -7,3 +7,4 @@ source $ZSH/oh-my-zsh.sh
 path+=("$HOME/docker-compose/scripts")
 path+=("$HOME/wg_mesh/scripts")
 export PATH
+alias compose='doppler run -- docker compose '
