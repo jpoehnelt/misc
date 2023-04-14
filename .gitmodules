@@ -1,0 +1,12 @@
+[submodule "deps/.zsh/zsh-autosuggestions"]
+	path = deps/.zsh/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "deps/.zsh/zsh-autopair"]
+	path = deps/.zsh/zsh-autopair
+	url = https://github.com/hlissner/zsh-autopair
+[submodule "deps/.zsh/zsh-syntax-highlighting"]
+	path = deps/.zsh/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "deps/.zsh/ohmyzsh"]
+	path = deps/.zsh/ohmyzsh
+	url = https://github.com/ohmyzsh/ohmyzsh
