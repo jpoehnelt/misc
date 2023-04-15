@@ -781,3 +781,9 @@ function _tf
     doppler run --name-transformer tf-var -- terraform $args
 }
 Set-Alias -Name tf -Value _tf
+
+function _term
+{
+    wt --startingDirectory .
+}
+Set-Alias -Name term -Value _term
