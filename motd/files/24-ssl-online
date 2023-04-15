@@ -1,0 +1,28 @@
+#!/bin/bash
+
+COLUMNS=2
+green="\e[1;32m"
+red="\e[1;31m"
+undim="\e[0m"
+
+declare -a domains=("whoami.izmera.nougui.net")
+
+out=""
+for i in "${domains[@]}"; do
+  sslName=$i
+  sslDate="$(echo | openssl s_client -connect $i:443 -servername $i 2>/dev/null | openssl x509 -enddate -noout | awk -F '=' '{ print $2 }')"
+  epochSSLDate=$(date --date="$sslDate" +%s)
+  epochCurrentDate=$(date +%s)
+  if [ "${epochSSLDate}" -gt "${epochCurrentDate}" ]; then
+    daysLeft=$(($(($epochSSLDate - $epochCurrentDate)) / $((24 * 3600))))
+    out+="$sslName:,${green}valid for another $daysLeft days ${undim},"
+  else
+    daysAgo=$(($(($epochSSLDate - $epochCurrentDate)) / $((24 * 3600))))
+    out+="$sslName:,${red} expired $daysAgo days ago ${undim},"
+  fi
+  out+="\n"
+done
+out+="\n"
+
+printf "\nssl status:\n"
+printf "$out" | column -ts $',' | sed -e 's/^/  /'
