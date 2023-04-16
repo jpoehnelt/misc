@@ -10,3 +10,6 @@
 [submodule "deps/.zsh/ohmyzsh"]
 	path = deps/.zsh/ohmyzsh
 	url = https://github.com/ohmyzsh/ohmyzsh
+[submodule "deps/.zsh/zsh-autocomplete"]
+	path = deps/.zsh/zsh-autocomplete
+	url = https://github.com/marlonrichert/zsh-autocomplete.git

@@ -4,10 +4,8 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 export EDITOR="nano"
 
-bindkey '^ ' autosuggest-accept
-
+source "$HOME/repos/misc/deps/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 source "$HOME/repos/misc/deps/.zsh/ohmyzsh/plugins/sudo/sudo.plugin.zsh"
-source "$HOME/repos/misc/deps/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOME/repos/misc/deps/.zsh/zsh-autopair/autopair.zsh"
 autopair-init
 source "$HOME/repos/misc/deps/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
@@ -23,6 +21,8 @@ alias df='df -h'
 alias free='free -m'
 
 alias compose='doppler run -- docker compose '
+alias tf='doppler run --name-transformer tf-var -- terraform '
+alias chmodssh='chmod 700 ~/.ssh && chmod 600 ~/.ssh/* && chmod 644 ~/.ssh/*.pub'
 alias m="git checkout main"
 
 case "$(uname -s)" in

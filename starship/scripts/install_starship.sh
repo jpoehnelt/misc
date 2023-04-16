@@ -24,6 +24,7 @@ fi
 
 cd "$home/repos/misc" || exit
 git pull --rebase --autostash --recurse-submodules
+git submodule update --init --recursive
 cd - || exit
 
 cd "$home/repos/misc/starship/scripts" || exit

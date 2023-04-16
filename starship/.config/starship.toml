@@ -1,4 +1,5 @@
 format = """
+$shell\
 $username\
 $hostname\
 $directory\
@@ -18,6 +19,11 @@ show_always = true
 [hostname]
 ssh_only = false
 ssh_symbol = " "
+
+[shell]
+unknown_indicator = 'mystery shell'
+style = 'bright-black'
+disabled = false
 
 [nodejs]
 symbol = " "
