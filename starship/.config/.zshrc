@@ -9,6 +9,9 @@ source "$HOME/repos/misc/deps/.zsh/ohmyzsh/plugins/sudo/sudo.plugin.zsh"
 source "$HOME/repos/misc/deps/.zsh/zsh-autopair/autopair.zsh"
 autopair-init
 source "$HOME/repos/misc/deps/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+if command -v kubectl > /dev/null 2>&1; then
+  source <(kubectl completion zsh)
+fi
 
 path+=("$HOME/docker-compose/scripts")
 path+=("$HOME/wg_mesh/scripts")
