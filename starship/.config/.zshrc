@@ -23,8 +23,10 @@ alias fgrep='fgrep --color=auto'
 alias df='df -h'
 alias free='free -m'
 
+alias dpr='doppler run -- '
 alias compose='doppler run -- docker compose '
 alias tf='doppler run --name-transformer tf-var -- terraform '
+alias acd='doppler tun -- argocd --port-forward --port-forward-namespace argocd '
 alias chmodssh='chmod 700 ~/.ssh && chmod 600 ~/.ssh/* && chmod 644 ~/.ssh/*.pub'
 alias m="git checkout main"
 
